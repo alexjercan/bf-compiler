@@ -157,14 +157,16 @@ void generate_assembly_input(FILE *f) {
 void generate_assembly_jump_forward(FILE *f, unsigned int label) {
     fprintf(f, "    mov rax, [pointer]          ; move pointer to current cell to rax\n");
     fprintf(f, "    cmp byte [rax], 0           ; compare current cell to 0\n");
-    fprintf(f, "    je .LB%d                     ; jump to closing bracket if equal\n", label);
+    fprintf(f, "    je .LB%d\n", label);
+    fprintf(f, "                                ; jump to closing bracket if equal\n");
     fprintf(f, ".LF%d:\n", label);
 }
 
 void generate_assembly_jump_backward(FILE *f, unsigned int label) {
     fprintf(f, "    mov rax, [pointer]          ; move pointer to current cell to rax\n");
     fprintf(f, "    cmp byte [rax], 0           ; compare current cell to 0\n");
-    fprintf(f, "    jne .LF%d                    ; jump to opening bracket if not equal\n", label);
+    fprintf(f, "    jne .LF%d\n", label);
+    fprintf(f, "                                ; jump to opening bracket if not equal\n");
     fprintf(f, ".LB%d:\n", label);
 }
 
