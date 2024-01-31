@@ -2,3 +2,6 @@ main
 example.asm
 example.o
 example
+.gdb_history
+peda-session-example.txt
+examples/asm/*
