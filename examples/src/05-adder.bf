@@ -19,15 +19,15 @@
 
     # add two numbers
     >>>>>>>>>>>> [- <<<<<<<<<<<< + >>>>>>>>>>>>] <<<<<<<<<<<< add the carry
-    [->+<]> > ++++++++++ > + <<< put 10 and 1 for divmod
+    [->+<]> > ++++++++++ > + << put 10 and 1 for divmod
 
     # Divmod Algorithm
-    # >n d 1 0 0 0
+    # n d 1 0 0 0
     [->-[>+>>]>[[-<+>]+>+>>]<<<<<]
-    # >0 d-n%d n%d+1 n/d 0 0
+    # 0 0 d_n%d n%d1 n/d 0 0
 
     # set modulo to actually n%d
-    >-
+    >>-
 
     # go to the last digit of the next number
     <<<<
@@ -38,7 +38,7 @@
 
 # show the carry which will also be like zero in case no numbers
 >>>>>
-++++++++++++++++++++++++++++++++++++++++++++++++ .
+[++++++++++++++++++++++++++++++++++++++++++++++++ . [-]]
 
 # go to start of the first number
 <<<<
