@@ -18,7 +18,7 @@ nasm -felf64 -g example.asm -o example.o && ld example.o -o example
 
 To get the calculator use the `examples/src/05-adder.bf` file.
 
-```bf
+```brainfuck
 - marker
 >,--------------------------------[>>>>>>>>,--------------------------------] read
 - marker
