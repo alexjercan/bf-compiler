@@ -7,6 +7,9 @@ I recommend trying out some of the examples from <http://brainfuck.org/>
 
 See the `c` or `zig` directories to get started.
 
+You can also run the checker using `./checker.sh <project>` where project can
+be `c` or `zig`.
+
 ### Calculator Example
 
 The calculator needs to have the input numbers with the same length. They can
