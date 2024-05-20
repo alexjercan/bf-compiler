@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PROJECT=$1
+
 # Set the paths to the folders
 SRC_FOLDER="examples/src"
 IN_FOLDER="examples/in"
@@ -7,10 +9,10 @@ OUT_FOLDER="examples/out"
 ERR_FOLDER="examples/err"
 
 # Build the compiler
-make clean && make
+make -s -C $PROJECT clean && make -s -C $PROJECT
 
 # Set the paths to your compiler
-COMPILER="./main"
+COMPILER="./$PROJECT/main"
 
 # Function to compare two files
 compare_files() {
@@ -116,7 +118,7 @@ done
 
 echo -e "Total: $pass_count/$total_tests"
 
-make clean
+make -s -C $PROJECT clean
 
 if [ $pass_count -eq $total_tests ]; then
     exit 0
